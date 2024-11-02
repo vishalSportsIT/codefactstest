@@ -1,0 +1,45 @@
+.header{
+    background-color:#0a0a0a;
+  @include Flex(row,center,space-between);
+  padding:0 10px;
+  color:white;
+
+  .heading{
+    font-weight: 700;
+  }
+
+  .nav-links{
+    @include Flex(row,center,space-around,25);
+    font-size: 1rem;
+    width:max-content;
+    Link{
+        color:white;
+      border-bottom: none;
+    }
+    .search{
+        @include Flex(row,center,space-around,10);
+        background-color: #0a0a0a;
+
+        input{
+            border:none !important;
+            background-color: #0a0a0a;
+            outline: none;
+            padding:1vh 1vw;
+            &:hover,
+        &:focus {
+          border: none !important; // Ensure no border appears
+          outline: none; // Remove outline on focus
+        }
+        }
+        &:hover,
+        &:focus{
+            border:0.1px solid rgba(255, 255, 255,0.5); 
+            border-radius: 50px;
+        }
+    }
+    .header-buttons{
+        background-color: rgba(13, 110, 253, 1) !important;
+        color:white;
+    }
+  }
+}

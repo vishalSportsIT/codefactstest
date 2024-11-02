@@ -1,0 +1,36 @@
+.footer{
+    background-color:#0a0a0a;
+    color:white;
+    @include Flex(row,flex-start,space-around);
+    .col-1,.col-2,.col-3,.col-4{
+        margin:2% 0;
+        width:max-content;
+        display: flex;
+        flex-direction: column;
+        li{list-style: none;margin-top: 0.5vh;}
+    }
+
+    .col-1{
+        gap:10px;
+       .heading{
+        font-size: 2rem;
+       }
+       .social-media-icons{
+        @include Flex(row,center,space-around);
+        .social-media-icon{ font-size: 0.9rem;}
+
+    }
+    }
+
+    .col-2,.col-3{
+       .heading{font-size: 1.5rem;
+        margin-bottom: 1vh;
+       }
+    }
+
+
+    .col-4{
+
+    }
+
+}
