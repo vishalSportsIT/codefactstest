@@ -51,10 +51,10 @@ const StudioCard = () => {
           {/* Buttons in the same row */}
           <Box display="flex" justifyContent="space-between">
             <Button variant="contained" color="primary">
-              Book Now
+              View PortFolio
             </Button>
             <Button variant="outlined" color="secondary">
-              More Info
+              999/hr
             </Button>
           </Box>
         </CardContent>

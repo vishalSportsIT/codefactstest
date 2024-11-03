@@ -4,11 +4,12 @@ import connectToMDb from '../utils/db/db.js';
 import { config } from 'dotenv';
 import userRoutes from '../api/user/routes.js';
 
+
+config();
 const app=express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
-config();
 
 
 const portNumber = process.env.USER_PORT_NUMBER;
