@@ -1,0 +1,29 @@
+.home-navs-container{
+    @include Flex(row,center,space-between);
+    background-color: white;
+    padding:5px 10px;
+    border:0.5px solid grey;
+    .heading{
+        font-size:2rem;
+    }
+    .nav-links{
+        @include Flex(row,center,space-around,25);
+        .search{
+            border:1px solid black;
+            padding:0;
+            margin:2px auto;
+            @include Flex(row,center,space-around,10);
+            border-radius:4px;
+            input{
+                border:none !important;
+                outline: none;
+                padding:1vh 1vw;
+                &:hover,
+            &:focus {
+              border: none !important; // Ensure no border appears
+              outline: none; // Remove outline on focus
+            }
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    .home-navs{
+        flex:0.1;
+    }
+
+    .categories-navs{
+        flex:0.1;
+        @include Flex(row,flex-start,flex-start,10);
+     
+        li{
+         list-style:none;
+          Button{
+             font-size: 1rem;
+          }
+        }
+     }
+
+     .content-box{
+        @include Flex(row,flex-start,flex-start,10);
+        .side-bar{
+          border:0.5px solid grey;
+          flex:0.2;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          margin-right: 2%;
+          border-radius:10px;
+          @include Flex(column,flex-start,flex-start,10);
+
+          .timer-box{
+            @include Flex(row,flex-start,space-between,10)
+          }
+          h1{
+            font-size: 1.3rem;
+          }
+          li{
+            list-style: none;
+          }
+        }
+        .content-bar{
+          flex:0.75;
+          display: flex;               
+           flex-wrap: wrap;           
+           justify-content: space-between;
+           gap:5px;
+
+           .studio-bar{
+              width:45%;
+              box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+           }
+        }
+     }
+}
+
+
+
+

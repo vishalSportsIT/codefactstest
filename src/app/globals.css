@@ -12,27 +12,29 @@
   }
 }
 
+
 *{
   margin:0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   display: flex;
   flex-direction: column;
   height:100vh;
   margin:0;
-  padding: 0;
+  padding: 0;;
+  overflow-y: scroll;
 }
 
 
 .header{
-   flex:0.07;
+   flex:0.1;
  }
  
  main{
-   background-color:orange;
-   flex:0.83
+   flex:0.8;
  }
  
  .footer{
