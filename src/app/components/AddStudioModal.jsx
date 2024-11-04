@@ -12,27 +12,28 @@ const AddStudioModal = ({ isVisible, onClose }) => {
   const [form] = Form.useForm();
 
   const handleFinish = async (values) => {
-    setLoading(true);
+    setLoading(true);  // Ensure the loading state is set
+
     const formData = new FormData();
   
     for (const key in values) {
-      if (key === 'image') {
+      if (key === 'image' && values[key]?.[0]?.originFileObj) {
         formData.append(key, values[key][0].originFileObj);
-      } else {
+      } else if (key !== 'image') {
         formData.append(key, values[key]);
       }
     }
   
     try {
       console.log('Submitting form data:', formData);
-      console.log()
+
       const res = await postRequest(apiEndPoints.addStudio, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
       console.log('Response:', res);
-  
+
       if (res.status === 201) {
         form.resetFields();
         onClose();
@@ -43,6 +44,7 @@ const AddStudioModal = ({ isVisible, onClose }) => {
       setLoading(false);
     }
   };
+
   
 
   return (
