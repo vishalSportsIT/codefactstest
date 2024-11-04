@@ -7,7 +7,7 @@ import { useAuth } from '@/context/AuthContext';
 
 const LoginForm = () => {
   const router = useRouter();
-  const { login } = useAuth(); // Use login from context
+  const { login } = useAuth(); 
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -23,7 +23,7 @@ const LoginForm = () => {
     try {
       const response = await postRequest(apiEndPoints.login, formData);
       if (response.status === 200) {
-        login(response.data.accessToken); // Call login from AuthContext
+        login(response.data.accessToken);
         router.push('/home');
       } else {
         console.error('Login failed', response.data);

@@ -3,12 +3,11 @@ import React, { Fragment, useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { apiEndPoints } from '../../utils/config/apiEndPoints';
 import { postRequest } from '@/utils/apiCaller';
- // Adjust the import path according to your project structure
 
 const SignUpForm = () => {
   const router = useRouter();
   
-  // Use refs for form fields
+ 
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
   const passwordRef = useRef(null);
@@ -28,15 +27,15 @@ const SignUpForm = () => {
     try {
       const response = await postRequest(apiEndPoints.signUp, formDataToSend, {
         headers: {
-          'Content-Type': 'multipart/form-data', // Important for file uploads
+          'Content-Type': 'multipart/form-data',
         },
       });
     
-      // Handle success, e.g., redirect to login or show a success message
+      
       router.push('/login');
     } catch (error) {
       console.error('Sign Up error:', error.response);
-      // Handle error (e.g., show an error message)
+      
     }
   };
 
