@@ -2,12 +2,12 @@
 import React, { Fragment, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { apiEndPoints } from '@/utils/config/apiEndPoints';
-import { setToLocalStorage } from '@/utils/helper';
 import { postRequest } from '@/utils/apiCaller';
-
+import { useAuth } from '@/context/AuthContext';
 
 const LoginForm = () => {
-  const router = useRouter();  
+  const router = useRouter();
+  const { login } = useAuth(); // Use login from context
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -20,13 +20,10 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Login data submitted:', formData);
-    
     try {
       const response = await postRequest(apiEndPoints.login, formData);
       if (response.status === 200) {
-        setToLocalStorage('gk', response.data.token);
-    
+        login(response.data.accessToken); // Call login from AuthContext
         router.push('/home');
       } else {
         console.error('Login failed', response.data);

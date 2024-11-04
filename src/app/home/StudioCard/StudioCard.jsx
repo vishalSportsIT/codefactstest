@@ -24,16 +24,15 @@ const StudioCard = () => {
         {/* Right Side - Content */}
         <CardContent sx={{ flex: '1' }}>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+          Downtown Photography Studio
           </Typography>
           <Typography variant="body2" color="text.secondary" gutterBottom>
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica.
-          </Typography>
+          A spacious photography studio with natural light, multiple backdrops, and a range of props. Ideal for portrait and product shoots.  </Typography>
           
           {/* Location and Rating in the same row */}
           <Box display="flex" justifyContent="space-between" alignItems="center" mb={1}>
             <Typography variant="body2" color="text.secondary">
-              Location: New York
+            Location: 123 Market St, Hyderabad
             </Typography>
             <Typography variant="body2" color="text.secondary">
               Rating: ★★★★☆
@@ -42,10 +41,10 @@ const StudioCard = () => {
 
           {/* Tools and Cost */}
           <Typography variant="body2" color="text.secondary" mb={1}>
-            Tools: Camera, Tripod, Lights
+          Availability: 9:00 AM - 8:00 PM, Monday to Saturday
           </Typography>
           <Typography variant="body2" color="text.secondary" mb={1}>
-            Cost: $200
+          Pricing: $100/hour
           </Typography>
 
           {/* Buttons in the same row */}

@@ -1,5 +1,5 @@
 const userBaseUrl='http://localhost:1234/api/v1/user';
-const studiBaseUrl='http://localhost:4321/api/v1/studio';
+const studioBaseUrl='http://localhost:4321/api/v1/studio';
 
 
 export const apiEndPoints={
@@ -8,5 +8,6 @@ export const apiEndPoints={
     login:userBaseUrl+'/login',
     refreshToken:userBaseUrl+'/refresh-token',
     profile:userBaseUrl+'/profile',
-    logout:userBaseUrl+'/logout'
+    logout:userBaseUrl+'/logout',
+    addStudio:studioBaseUrl+'//studios'
 }
