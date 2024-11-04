@@ -21,7 +21,17 @@ export const getStudios = async (req, res) => {
 
 
 export const addStudio = async (req, res) => {
-    const { name, location, description, pricing, availability, contactInfo, category } = req.body;
+    const {
+        name,
+        location,
+        description,
+        pricing,
+        startTime,  
+        endTime,    
+        contactInfo,
+        category
+    } = req.body;
+
     const image = req.file ? req.file.path : null;
 
     try {
@@ -30,17 +40,20 @@ export const addStudio = async (req, res) => {
             location,
             description,
             pricing,
-            availability,
+            startTime, 
+            endTime,   
             contactInfo,
             category,
             image,
         });
+
         await newStudio.save();
         res.status(201).json(newStudio);
     } catch (error) {
         res.status(400).json({ message: 'Error adding studio', error });
     }
 };
+
 
 
 export const getStudioById = async (req, res) => {

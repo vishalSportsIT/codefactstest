@@ -1,9 +1,10 @@
 "use client"
 import React, { useState } from 'react';
-import { Modal, Button, Form, Input, Upload, Select } from 'antd';
+import { Modal, Button, Form, Input, Upload, Select, TimePicker } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { postRequest } from '@/utils/apiCaller';
 import { apiEndPoints } from '@/utils/config/apiEndPoints';
+import moment from 'moment'; 
 
 const { TextArea } = Input;
 
@@ -12,7 +13,7 @@ const AddStudioModal = ({ isVisible, onClose }) => {
   const [form] = Form.useForm();
 
   const handleFinish = async (values) => {
-    setLoading(true);  // Ensure the loading state is set
+    setLoading(true);
 
     const formData = new FormData();
   
@@ -45,8 +46,6 @@ const AddStudioModal = ({ isVisible, onClose }) => {
     }
   };
 
-  
-
   return (
     <Modal
       title="Add Studio"
@@ -71,8 +70,12 @@ const AddStudioModal = ({ isVisible, onClose }) => {
           <Input />
         </Form.Item>
 
-        <Form.Item label="Availability" name="availability" rules={[{ required: true, message: 'Please specify availability' }]}>
-          <Input />
+        <Form.Item label="Start Time" name="startTime" rules={[{ required: true, message: 'Please specify the start time' }]}>
+          <TimePicker format="HH:mm" />
+        </Form.Item>
+
+        <Form.Item label="End Time" name="endTime" rules={[{ required: true, message: 'Please specify the end time' }]}>
+          <TimePicker format="HH:mm" />
         </Form.Item>
 
         <Form.Item label="Contact Info" name="contactInfo" rules={[{ required: true, message: 'Please enter contact info' }]}>

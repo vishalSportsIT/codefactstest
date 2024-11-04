@@ -9,5 +9,6 @@ export const apiEndPoints={
     refreshToken:userBaseUrl+'/refresh-token',
     profile:userBaseUrl+'/profile',
     logout:userBaseUrl+'/logout',
-    addStudio:studioBaseUrl+'//studios'
+    addStudio:studioBaseUrl+'/studios',
+    getStudio:studioBaseUrl+'/studios'
 }

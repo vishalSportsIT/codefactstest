@@ -1,4 +1,3 @@
-
 import mongoose from 'mongoose';
 
 const studioSchema = new mongoose.Schema({
@@ -6,7 +5,8 @@ const studioSchema = new mongoose.Schema({
     location: { type: String, required: true },
     description: { type: String, required: true },
     pricing: { type: String, required: true }, 
-    availability: { type: String, required: true }, 
+    startTime: { type: String, required: true }, 
+    endTime: { type: String, required: true },   
     contactInfo: { type: String, required: true }, 
     category: { type: String, required: true }, 
     rating: { type: Number, min: 0, max: 5 },
