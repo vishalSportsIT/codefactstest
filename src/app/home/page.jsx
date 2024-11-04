@@ -1,3 +1,4 @@
+"use client";
 import React, { Fragment, useEffect } from 'react';
 import HomeNavs from './HomeNavs/HomeNavs';
 import { Button, DatePicker, Divider, Input, TimePicker } from 'antd';
@@ -5,10 +6,6 @@ import { EnvironmentOutlined } from '@ant-design/icons';
 import StudioCard from './StudioCard/StudioCard';
 
 const page = () => {
-
-  useEffect(()=>{
-
-  },[])
 
   return (
     <div className='home mx-3 my-5'>
