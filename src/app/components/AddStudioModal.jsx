@@ -26,14 +26,13 @@ const AddStudioModal = ({ isVisible, onClose }) => {
     }
   
     try {
-      console.log('Submitting form data:', formData);
 
       const res = await postRequest(apiEndPoints.addStudio, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
       });
-      console.log('Response:', res);
+      
 
       if (res.status === 201) {
         form.resetFields();

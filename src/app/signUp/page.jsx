@@ -31,7 +31,7 @@ const SignUpForm = () => {
           'Content-Type': 'multipart/form-data', // Important for file uploads
         },
       });
-      console.log('Sign Up response:', response.data);
+    
       // Handle success, e.g., redirect to login or show a success message
       router.push('/login');
     } catch (error) {

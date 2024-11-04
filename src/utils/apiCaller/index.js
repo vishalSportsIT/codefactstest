@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getFromLocalStorage, removeFromLocalStorage, saveToLocalStorage } from "../helper";
+import { getFromLocalStorage, removeFromLocalStorage, setToLocalStorage } from "../helper/index";
 
 
 async function refreshToken() {
@@ -9,13 +9,13 @@ async function refreshToken() {
     });
     const { accessToken } = response.data;
     
-    saveToLocalStorage("gk", accessToken);
+    setToLocalStorage("gk", accessToken);
     return accessToken;
   } catch (error) {
     
     removeFromLocalStorage("gk");
     removeFromLocalStorage("refreshToken");
-    
+   
     return null;
   }
 }

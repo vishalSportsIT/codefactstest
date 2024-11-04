@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const fetchUserProfile = async (token) => {
-    const response = await getRequest(apiEndPoints.profile, true);
+    const response = await getRequest(apiEndPoints.profile, token);
     if (response && response.data) {
       setUser(response.data);
     } else {

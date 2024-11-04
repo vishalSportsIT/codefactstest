@@ -9,7 +9,7 @@ import { useAuth } from '@/context/AuthContext';
 const Header = () => {
   const { token, logout ,user} = useAuth(); 
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  console.log(token);
+  
   
   return (
     <Fragment>
